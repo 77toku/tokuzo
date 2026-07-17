@@ -1,268 +1,241 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>小野徳三｜ブランドOS設計書</title>
-<style>
-:root{--gold:#c9a24a;--deep:#352313;--pink:#f7d8d8;--cream:#fffaf2;--line:#06c755}
-*{box-sizing:border-box}
-body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic",Meiryo,sans-serif;color:var(--deep);background:linear-gradient(180deg,#fffaf2,#fff,#fff7f4);line-height:1.9}
-.wrap{max-width:880px;margin:auto;padding:0 18px}
-.hero{padding:44px 0 28px;background:radial-gradient(circle at 0 0,rgba(247,216,216,.9),transparent 35%)}
-.badge{display:inline-block;padding:7px 13px;border:1px solid rgba(201,162,74,.5);border-radius:999px;background:#fff;font-size:12px;font-weight:800;color:#6b4a2b}
-h1{font-size:clamp(32px,8vw,58px);line-height:1.18;margin:18px 0 12px}
-.lead{font-size:18px;font-weight:800;color:#6b4a2b}
-.hero-box,.card{background:rgba(255,255,255,.94);border:1px solid rgba(201,162,74,.25);border-radius:26px;padding:22px;box-shadow:0 18px 40px rgba(65,37,12,.10)}
-.btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 18px;border-radius:999px;text-decoration:none;font-weight:900;margin:8px 8px 0 0}
-.line{background:var(--line);color:#fff}.gold{background:linear-gradient(135deg,#d8b963,#a97922);color:#fff}
-.toc{background:linear-gradient(135deg,#3b2a1a,#6b4a2b);padding:28px 0;margin:16px 0 28px;color:#fff}
-.toc-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
-.toc a{display:block;color:#fff;text-decoration:none;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.08);padding:12px 14px;border-radius:14px;font-weight:700;font-size:14px}
-.card{margin:18px 0}
-.card span{color:var(--gold);font-size:12px;font-weight:900;letter-spacing:.12em}
-h2{font-size:clamp(22px,5vw,34px);line-height:1.35;margin:6px 0 16px}
-p{margin:0 0 13px}ul{margin:0 0 16px;padding-left:1.3em}li{margin:4px 0}
-.quote{border-left:4px solid var(--gold);background:#fff8e6;padding:13px 15px;border-radius:12px;font-weight:800;color:#4c2e12}
-.final{text-align:center;padding:34px 0 52px}
-.fixed{position:sticky;bottom:10px;z-index:10;padding:0 16px 12px;display:flex;justify-content:center;pointer-events:none}
-.fixed a{pointer-events:auto;width:min(520px,100%);text-align:center}
-footer{text-align:center;padding:24px;font-size:12px;color:#8a7564;background:#fff}
-@media(max-width:720px){.toc-grid{grid-template-columns:1fr}.btn{width:100%}.card,.hero-box{padding:19px;border-radius:22px}}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="description" content="小野徳三ブランドサイト。人とのご縁を力に。婚活、AI・Web制作、美容・健康を通じて、新しい出会いと未来をつなぎます。">
+  <meta name="theme-color" content="#0b0c10">
+  <title>小野徳三｜人とのご縁を力に。</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header class="hero"><div class="wrap">
-<span class="badge">BRAND OS REPORT</span>
-<h1>小野徳三<br>ブランドOS設計書</h1>
-<p class="lead">ご縁を起点に、人の可能性が開く場をつくる。</p>
-<div class="hero-box">
-<p class="quote">ご縁創造型・人生支援プロデュースOS</p>
-<p>小野徳三という人物を中心に据えた、LINEで共有しやすいブランドOS設計書です。</p>
-<a class="btn line" href="https://line.me/R/share?text=%E5%B0%8F%E9%87%8E%E5%BE%B3%E4%B8%89%EF%BD%9C%E3%83%96%E3%83%A9%E3%83%B3%E3%83%89OS%E8%A8%AD%E8%A8%88%E6%9B%B8">LINEで送る</a>
-<a class="btn gold" href="#toc">目次を見る</a>
-</div>
-</div></header>
+  <header class="hero">
+    <div class="hero__inner reveal">
+      <p class="eyebrow">TOKUZO ONO — BRAND SITE 2.0</p>
+      <h1>人とのご縁を力に。</h1>
+      <p class="hero__lead">一つの出会いが、仕事を変え、家族を生み、未来をつくる。</p>
+      <div class="hero__actions">
+        <a class="button button--light" href="#about">プロフィールを見る</a>
+        <a class="button button--glass" href="#connect">紹介できる方を探す</a>
+      </div>
+    </div>
+  </header>
 
-<nav class="toc" id="toc"><div class="wrap">
-<h2>目次</h2><div class="toc-grid"><a href="#s0">人物概要</a>
-<a href="#s1">人生のテーマ</a>
-<a href="#s2">信念</a>
-<a href="#s3">仕事哲学</a>
-<a href="#s4">お金の哲学</a>
-<a href="#s5">教育哲学</a>
-<a href="#s6">結婚相談所哲学</a>
-<a href="#s7">SNS哲学</a>
-<a href="#s8">AI哲学</a>
-<a href="#s9">嫌うもの</a>
-<a href="#s10">意思決定パターン</a>
-<a href="#s11">強み</a>
-<a href="#s12">弱み</a>
-<a href="#s13">GPTs用人格設定</a>
-<a href="#s14">この人物の思想OS</a></div>
-</div></nav>
+  <main>
+    <section class="statement">
+      <div class="statement__inner reveal">
+        <p class="eyebrow">A CONNECTION CAN CHANGE A LIFE</p>
+        <h2>あなたの人生は、<span>誰との出会いで変わりましたか？</span></h2>
+        <p>私自身、人とのご縁によって、新しい仕事や挑戦、家族の幸せへとつながってきました。</p>
+      </div>
+    </section>
 
-<main class="wrap">
-<section class="card" id="s0"><span>SECTION 01</span><h2>人物概要</h2><p class="">この人物を一言で表すと？</p>
-<p class="quote">「人とのご縁を起点に、教育・結婚・事業・情報発信をつなぎ、人の可能性が開く場を作ろうとする実践型プロデューサー」</p>
-<p class="">小野徳三という人物は、単なる結婚相談所の運営者でも、副業実践者でも、SNS発信者でもない。</p>
-<p class="">本質は、</p>
-<p class="quote">「人が自分の可能性に気づき、家族・仕事・お金・人間関係を整えながら、より良い人生へ進めるきっかけを作る人」</p>
-<p class="">である。</p>
-<p class="quote">表面的には、結婚相談所「晴日」の運営、エステレラの紹介活動、公式LINEやLP制作、セミナー主催、AI活用をしている人に見える。</p>
-<p class="">しかし根底にあるのは、</p>
-<p class="">“人の人生が変わる入口を作りたい”</p>
-<p class="">という強い思想である。</p></section>
-<section class="card" id="s1"><span>SECTION 02</span><h2>人生のテーマ</h2><p class="">人生で最も大切にしている価値観 TOP10</p>
-<p class="">1. ご縁を大切にすること</p>
-<p class="">小野徳三にとって、人との出会いは単なる人脈ではない。人生が変わるきっかけであり、仕事・結婚・学び・成長が始まる入口である。</p>
-<p class="">2. 家族を守ること</p>
-<p class="">自分だけが成功することではなく、妻や子どもたちの笑顔、安心、未来を守ることが大きな動機になっている。</p>
-<p class="">3. 人の可能性を引き出すこと</p>
-<p class="">相手の中にある本音、悩み、願望、才能、行動上の課題を見つけ、前に進めるように関わることを重視している。</p>
-<p class="">4. 教育で人生を変えること</p>
-<p class="">単なるノウハウ提供ではなく、人が自分で考え、選び、行動できるようになる教育に価値を置いている。</p>
-<p class="">5. 誠実であること</p>
-<p class="">売上や成果だけでなく、相手に対して嘘がないか、無理に誘導していないか、長期的に信頼されるかを重視する。</p>
-<p class="">6. 行動しながら整えること</p>
-<p class="">完璧になってから始めるのではなく、まず動き、反応を見て、改善していく実践型の思考を持っている。</p>
-<p class="">7. 日本・地域・家族文化を大切にすること</p>
-<p class="">大分、地域、和の世界観、家族、結婚、教育、日本製へのこだわりが根底にある。</p>
-<p class="">8. 仕組み化すること</p>
-<p class="">公式LINE、LP、紹介制度、カードメニュー、ステップ配信、AI、スプレッドシートなど、人の想いを仕組みに落とし込むことを重視する。</p>
-<p class="">9. 女性と子どもの笑顔を増やすこと</p>
-<p class="">結婚相談所や教育事業の根底には、女性が安心して輝き、子どもたちが笑顔で育つ社会を作りたい意識がある。</p>
-<p class="">10. 自分自身も成長し続けること</p>
-<p class="">失敗や葛藤を隠すのではなく、それも含めて学びに変え、常に自分を更新しようとしている。</p></section>
-<section class="card" id="s2"><span>SECTION 03</span><h2>信念</h2><p class="">小野徳三が強く信じていること TOP20</p>
-<p class="">1. 人は出会いで人生が変わる。</p>
-<p class="">2. ただの情報より、誰から聞くかが大事である。</p>
-<p class="">3. 人は本音を話せる相手がいるだけで前に進める。</p>
-<p class="">4. 結婚は条件だけではなく、人生設計そのものである。</p>
-<p class="">5. 婚活には自己理解が必要である。</p>
-<p class="">6. 副業や事業は、お金だけでなく人間性が出る。</p>
-<p class="">7. 売り込みより、相手の話を深く聴くことが大切である。</p>
-<p class="">8. 質問力は、すべての活動の土台である。</p>
-<p class="">9. 公式LINEやLPは、ただの集客ツールではなく、想いを届ける導線である。</p>
-<p class="">10. 仕組みが整えば、人はもっと楽に価値を届けられる。</p>
-<p class="">11. 家族を犠牲にした成功は、本当の成功ではない。</p>
-<p class="">12. 地域に根ざした活動には大きな可能性がある。</p>
-<p class="">13. 学び続ける人は、何歳からでも変われる。</p>
-<p class="">14. 夢を語るだけではなく、行動設計に落とすことが大事である。</p>
-<p class="">15. 本当に良いものは、必要な人に届く形にしなければ意味がない。</p>
-<p class="">16. 人は押されるより、気づいたときに動く。</p>
-<p class="">17. AIは、想いを形にするための強力な相棒である。</p>
-<p class="">18. 結婚相談所は、単なるマッチングではなく人生支援である。</p>
-<p class="">19. 紹介制度は、信頼を広げる仕組みとして設計すべきである。</p>
-<p class="">20. 人生は、自分の本音に気づいた瞬間から変わり始める。</p></section>
-<section class="card" id="s3"><span>SECTION 04</span><h2>仕事哲学</h2><p class="">小野徳三にとって仕事とは、単なる収益活動ではない。</p>
-<p class="quote">「人の人生が変わる入口を作ること」</p>
-<p class="">である。</p>
-<p class="quote">結婚相談所「晴日」では、単に相手を紹介するだけではなく、</p>
-<ul>
-<li>自分を知る</li>
-<li>理想の未来を描く</li>
-<li>結婚観を整える</li>
-<li>価値観を言語化する</li>
-<li>行動を変える</li>
-<li>ご縁をつなぐ</li>
-</ul>
-<p class="">という人生設計型の支援を重視している。</p>
-<p class="">また、エステレラやウェルネス事業では、単に商品を紹介するのではなく、</p>
-<ul>
-<li>学びの環境</li>
-<li>人との関わり方</li>
-<li>質問力</li>
-<li>入口設計</li>
-<li>継続的な収益導線</li>
-<li>人を紹介しやすい仕組み</li>
-</ul>
-<p class="">を重視している。</p>
-<p class="">小野徳三にとって仕事は、</p>
-<p class="quote">「商品を売ること」ではなく「人が前に進む理由を作ること」</p>
-<p class="">である。</p></section>
-<section class="card" id="s4"><span>SECTION 05</span><h2>お金の哲学</h2><p class="">小野徳三は、お金を否定していない。</p>
-<p class="">むしろ、お金は家族を守り、選択肢を増やし、人を支援するために必要なものだと考えている。</p>
-<p class="">ただし、強く嫌うのは以下である。</p>
-<ul>
-<li>相手を騙して稼ぐこと</li>
-<li>夢だけを見せること</li>
-<li>中身のない高額商材</li>
-<li>人間関係を壊す勧誘</li>
-<li>家族を犠牲にした収入</li>
-<li>再現性のない成功話</li>
-<li>売る側だけが得をする仕組み</li>
-</ul>
-<p class="">小野徳三のお金の哲学は、</p>
-<p class="quote">「お金は、信頼・価値提供・ご縁の結果として受け取るもの」</p>
-<p class="">である。</p></section>
-<section class="card" id="s5"><span>SECTION 06</span><h2>教育哲学</h2><p class="">小野徳三の教育哲学は、</p>
-<p class="quote">「答えを教える教育」ではなく「自分で人生を選べる人を育てる教育」</p>
-<p class="">である。</p>
-<p class="">特に重視しているのは、</p>
-<ul>
-<li>自分の本音に気づくこと</li>
-<li>価値観を言語化すること</li>
-<li>行動上の課題を理解すること</li>
-<li>人との関わり方を学ぶこと</li>
-<li>質問力を身につけること</li>
-<li>自分の未来を描くこと</li>
-</ul></section>
-<section class="card" id="s6"><span>SECTION 07</span><h2>結婚相談所哲学</h2><p class="">小野徳三にとって結婚相談所は、単なる婚活サービスではない。</p>
-<p class="quote">それは、「人生を整える場所」である。</p>
-<p class="">婚活で大切なのは、条件検索だけではない。</p>
-<ul>
-<li>自分はどんな人生を望んでいるのか</li>
-<li>どんな家族を作りたいのか</li>
-<li>何を大切にして生きたいのか</li>
-<li>相手に何を求めるのか</li>
-<li>自分は相手に何を与えられるのか</li>
-</ul>
-<p class="">晴日というブランドには、</p>
-<p class="quote">「出会いを通じて、人生にあたたかい光を差し込む」</p>
-<p class="">という思想がある。</p></section>
-<section class="card" id="s7"><span>SECTION 08</span><h2>SNS哲学</h2><p class="">小野徳三がSNSで発信する理由は、単に目立つためではない。</p>
-<p class="quote">目的は、「必要な人に、必要なタイミングで、気づきの入口を届けること」である。</p>
-<p class="quote">小野徳三にとってSNSは、「集客媒体」ではなく「ご縁の入口」である。</p></section>
-<section class="card" id="s8"><span>SECTION 09</span><h2>AI哲学</h2><p class="">小野徳三はAIを、単なる文章作成ツールとは見ていない。</p>
-<p class="quote">むしろ、「自分の想い・事業構想・導線設計・言葉選びを形にする外部脳」として捉えている。</p></section>
-<section class="card" id="s9"><span>SECTION 10</span><h2>嫌うもの</h2><p class="">小野徳三が避ける考え方や行動 TOP20</p>
-<p class="">1. 相手の話を聞かずに売り込むこと</p>
-<p class="">2. 家族を犠牲にする働き方</p>
-<p class="">3. 中身のない成功アピール</p>
-<p class="">4. 人間関係を壊す勧誘</p>
-<p class="">5. その場限りのテンション商法</p>
-<p class="">6. 相手の不安につけ込むこと</p>
-<p class="">7. 誠実さのないビジネス</p>
-<p class="">8. 仕組みがないまま感覚で動くこと</p>
-<p class="">9. 想いだけで赤字を続けること</p>
-<p class="">10. 行動しないまま悩み続けること</p>
-<p class="">11. 誰かを否定するだけの発信</p>
-<p class="">12. 相手の可能性を決めつけること</p>
-<p class="">13. 家族のお金を軽く扱うこと</p>
-<p class="">14. 感情だけで判断すること</p>
-<p class="">15. ご縁を雑に扱うこと</p>
-<p class="">16. 返信や対応が不誠実なこと</p>
-<p class="">17. 継続できない仕組み</p>
-<p class="">18. 相手に依存させる支援</p>
-<p class="">19. 自分の本音をごまかすこと</p>
-<p class="">20. 人の人生を軽く扱うこと</p></section>
-<section class="card" id="s10"><span>SECTION 11</span><h2>意思決定パターン</h2><p class="">1. 人の可能性が広がるか</p>
-<p class="">2. 家族を守れるか</p>
-<p class="">3. 信頼を積めるか</p>
-<p class="">4. 仕組みにできるか</p>
-<p class="">5. 相手が自然に動けるか</p>
-<p class="">6. 自分の価値観と合うか</p>
-<p class="">7. 実務で使えるか</p></section>
-<section class="card" id="s11"><span>SECTION 12</span><h2>強み</h2><p class="">1. 人の可能性を見つける力</p>
-<p class="">2. ご縁をつなぐ力</p>
-<p class="">3. 相手の話を引き出す力</p>
-<p class="">4. 行動力</p>
-<p class="">5. AI活用力</p>
-<p class="">6. LP・LINE・導線設計への関心</p>
-<p class="">7. セミナーや場を作る力</p>
-<p class="">8. 家族への責任感</p>
-<p class="">9. 地域密着の感覚</p>
-<p class="">10. 教育への想い</p>
-<p class="">11. 返信文や言葉選びへの感度</p>
-<p class="">12. 相手に合わせた距離感を考える力</p>
-<p class="">13. 複数事業をつなげて考える力</p>
-<p class="">14. 実践しながら改善する力</p>
-<p class="">15. 人との関係性を大切にする力</p>
-<p class="">16. 商品・制度・導線を組み合わせる発想</p>
-<p class="">17. 本音ベースで考える力</p>
-<p class="">18. 失敗を学びに変える力</p>
-<p class="">19. 目標を大きく描ける力</p>
-<p class="">20. 家族・女性・子どもの未来を考える視点</p></section>
-<section class="card" id="s12"><span>SECTION 13</span><h2>弱み</h2><p class="">1. やりたいことが多く、優先順位が散らばりやすい</p>
-<p class="">2. 思いついたらすぐ形にしたくなる</p>
-<p class="">3. 家族への想いが強い分、焦りや不安も出やすい</p>
-<p class="">4. 相手の反応を気にしすぎることがある</p>
-<p class="">5. 仕組みを作る前に動きすぎることがある</p>
-<p class="">6. 良かれと思って先回りしすぎることがある</p>
-<p class="">7. 妻や身近な人に、押し付けに見える可能性がある</p>
-<p class="">8. 赤字やお金の不安に強く反応しやすい</p>
-<p class="">9. 複数のビジネスを同時進行しすぎる</p>
-<p class="">10. 完成前に次のアイデアが出る</p></section>
-<section class="card" id="s13"><span>SECTION 14</span><h2>GPTs用人格設定</h2><p class="">ミッション：</p>
-<p class="">小野徳三の思想・判断基準・言葉選び・事業構想・ご縁づくり・教育観・家族観を再現し、結婚相談所「晴日」、エステレラ、公式LINE運用、LP制作、セミナー資料、返信文作成、紹介制度設計を支援する。</p></section>
-<section class="card" id="s14"><span>SECTION 15</span><h2>この人物の思想OS</h2><p class="">小野徳三という人物の思想OSを一言で表すなら、</p>
-<p class="quote">「ご縁創造型・人生支援プロデュースOS」</p>
-<p class="">である。</p>
-<p class="">このOSの根底には、</p>
-<p class="quote">「人は一人では変わりにくい。でも、ご縁ときっかけがあれば変われる」</p>
-<p class="">という人間理解がある。</p>
-<p class="">小野徳三のブランドOSとは、売るためのOSではない。</p>
-<p class="">人の可能性を信じ、ご縁を結び、人生が動き出す場を作るOSである。</p></section>
-<section class="final">
-<h2>この人物の思想OS</h2>
-<p class="quote">ご縁創造型・人生支援プロデュースOS</p>
-<p>売るためのOSではなく、人の可能性を信じ、ご縁を結び、人生が動き出す場を作るOSである。</p>
-<a class="btn line" href="https://line.me/R/share?text=%E5%B0%8F%E9%87%8E%E5%BE%B3%E4%B8%89%EF%BD%9C%E3%83%96%E3%83%A9%E3%83%B3%E3%83%89OS%E8%A8%AD%E8%A8%88%E6%9B%B8">LINEで送る</a>
-</section>
-</main>
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section__head reveal">
+          <p class="eyebrow">ABOUT TOKUZO</p>
+          <h2>小野 徳三という人。</h2>
+        </div>
 
-<div class="fixed"><a class="btn line" href="https://line.me/R/share?text=%E5%B0%8F%E9%87%8E%E5%BE%B3%E4%B8%89%EF%BD%9C%E3%83%96%E3%83%A9%E3%83%B3%E3%83%89OS%E8%A8%AD%E8%A8%88%E6%9B%B8">LINEで送る</a></div>
-<footer>© 小野徳三 Brand OS Report</footer>
+        <div class="about-grid">
+          <div class="about-copy reveal">
+            <p>
+              大分県大分市で暮らし、会社員として働きながら、
+              結婚相談所「晴日」、AI・Web制作、美容・健康に関わる活動をしています。
+            </p>
+            <p>
+              事業は違って見えても、共通しているのは
+              <strong>「人の可能性を見つけ、次のご縁へつなぐこと」</strong>です。
+            </p>
+          </div>
+
+          <div class="facts">
+            <article class="fact reveal"><b>出身・住まい</b><span>大分県大分市</span></article>
+            <article class="fact reveal"><b>対応</b><span>全国オンライン</span></article>
+            <article class="fact reveal"><b>家族</b><span>3人の子どもを育てる父</span></article>
+            <article class="fact reveal"><b>得意</b><span>人と人・人と事業をつなぐこと</span></article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section story" id="story">
+      <div class="container">
+        <div class="section__head centered reveal">
+          <p class="eyebrow">THE TREE OF CONNECTION</p>
+          <h2>ご縁は、育てるもの。</h2>
+          <p>出会いから信頼へ。信頼から紹介へ。紹介から新しい未来へ。</p>
+        </div>
+
+        <div class="story-grid">
+          <div class="tree-card reveal">
+            <svg class="tree" viewBox="0 0 500 620" role="img" aria-label="ご縁の木">
+              <path class="trunk" d="M250 550 C245 470 252 390 250 310 C248 235 255 180 250 110"/>
+              <path class="branch" d="M250 390 C205 355 165 325 125 285"/>
+              <path class="branch" d="M250 360 C295 330 335 300 375 255"/>
+              <path class="branch" d="M250 300 C210 270 180 235 160 195"/>
+              <path class="branch" d="M250 280 C292 245 320 210 340 165"/>
+              <path class="branch" d="M250 225 C225 190 220 155 225 120"/>
+              <path class="branch" d="M250 215 C275 180 280 145 275 110"/>
+              <g class="leaves">
+                <circle cx="122" cy="284" r="16"/><circle cx="155" cy="315" r="15"/>
+                <circle cx="380" cy="252" r="17"/><circle cx="337" cy="291" r="15"/>
+                <circle cx="158" cy="193" r="17"/><circle cx="190" cy="235" r="14"/>
+                <circle cx="342" cy="163" r="17"/><circle cx="310" cy="210" r="14"/>
+                <circle cx="224" cy="118" r="16"/><circle cx="276" cy="108" r="16"/>
+              </g>
+              <g class="flowers">
+                <circle cx="118" cy="270" r="9"/><circle cx="149" cy="303" r="8"/>
+                <circle cx="385" cy="238" r="9"/><circle cx="350" cy="278" r="8"/>
+                <circle cx="150" cy="180" r="9"/><circle cx="181" cy="220" r="8"/>
+                <circle cx="348" cy="150" r="9"/><circle cx="318" cy="198" r="8"/>
+                <circle cx="215" cy="105" r="9"/><circle cx="286" cy="95" r="9"/>
+              </g>
+            </svg>
+          </div>
+
+          <div class="story-steps">
+            <article class="story-step reveal"><span>1</span><div><b>出会い</b><p>まずは、一人の方と出会うことから始まります。</p></div></article>
+            <article class="story-step reveal"><span>2</span><div><b>信頼</b><p>相手の話を聞き、想いや目標を知ります。</p></div></article>
+            <article class="story-step reveal"><span>3</span><div><b>ご紹介</b><p>その方に合う人や情報へ、丁寧につなぎます。</p></div></article>
+            <article class="story-step reveal"><span>4</span><div><b>未来</b><p>ご縁が仕事、家族、笑顔へと育っていきます。</p></div></article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section connect" id="connect">
+      <div class="container">
+        <div class="section__head centered reveal">
+          <p class="eyebrow">WHO I WANT TO MEET</p>
+          <h2>あなたの周りに、<br>こんな方はいませんか？</h2>
+          <p>一人でも思い浮かぶ方がいれば、このページをそっと共有してください。</p>
+        </div>
+
+        <div class="connect-grid">
+          <article class="connect-card reveal"><span>💍</span><h3>婚活を考えている方</h3><p>結婚を考えているけれど、一歩を踏み出せずにいる方。</p></article>
+          <article class="connect-card reveal"><span>🤖</span><h3>AIを活用したい方</h3><p>仕事や情報発信にAIを取り入れたい方。</p></article>
+          <article class="connect-card reveal"><span>💻</span><h3>Webサイトが必要な方</h3><p>LPやホームページを作りたい方。</p></article>
+          <article class="connect-card reveal"><span>✨</span><h3>美容・健康に興味がある方</h3><p>毎日のケアや暮らしをより良くしたい方。</p></article>
+          <article class="connect-card reveal"><span>🌿</span><h3>健康サロン運営者</h3><p>新しい商品・企画・集客方法を探している方。</p></article>
+          <article class="connect-card reveal"><span>👥</span><h3>コミュニティ運営者</h3><p>人とのつながりを大切に活動されている方。</p></article>
+          <article class="connect-card reveal"><span>🏢</span><h3>経営者・個人事業主</h3><p>事業の仕組み化や新しい出会いを求めている方。</p></article>
+          <article class="connect-card reveal"><span>🌈</span><h3>新しい挑戦をしたい方</h3><p>自分の可能性を広げたいと考えている方。</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section services">
+      <div class="container">
+        <div class="section__head centered reveal">
+          <p class="eyebrow">WHAT I DO</p>
+          <h2>私がお力になれること。</h2>
+        </div>
+
+        <div class="services-grid">
+          <article class="service reveal"><span>💍</span><h3>結婚相談所「晴日」</h3><p>婚活サポート、ご縁づくり、恋愛・結婚相談を通じて、新しい家族が生まれるきっかけをつくります。</p></article>
+          <article class="service reveal"><span>🤖</span><h3>AI・Web制作</h3><p>LP、ホームページ、HTML、比較サイトの制作や、AIを活用した業務効率化を支援します。</p></article>
+          <article class="service reveal"><span>✨</span><h3>美容・健康</h3><p>エステレラを通じて、美容と健康に関する商品や情報をご紹介します。</p></article>
+          <article class="service reveal"><span>🤝</span><h3>ご縁づくり</h3><p>交流や紹介を通じて、人と人、人とビジネスが自然につながるきっかけをつくります。</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section flow">
+      <div class="container">
+        <div class="section__head centered reveal">
+          <p class="eyebrow">HOW CONNECTION WORKS</p>
+          <h2>ご紹介いただいた後の流れ。</h2>
+          <p>相手のお話を伺い、その方に合ったご提案を大切にしています。</p>
+        </div>
+
+        <div class="flow-line">
+          <div class="flow-item reveal"><b>1</b><span>あなた</span><small>このページを共有</small></div>
+          <div class="flow-item reveal"><b>2</b><span>小野徳三</span><small>ご連絡・ご挨拶</small></div>
+          <div class="flow-item reveal"><b>3</b><span>ヒアリング</span><small>悩みや目的を確認</small></div>
+          <div class="flow-item reveal"><b>4</b><span>ご提案</span><small>必要な情報をご案内</small></div>
+          <div class="flow-item reveal"><b>5</b><span>新しいご縁</span><small>次の一歩へ</small></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="message">
+      <div class="container">
+        <div class="message-card reveal">
+          <p class="eyebrow">COPY MESSAGE</p>
+          <h2>そのまま送れる紹介メッセージ。</h2>
+          <p>文章は自由に編集して、そのままコピーしてお使いいただけます。</p>
+          <textarea id="messageText">こんにちは😊
+
+「こんな方がいたら、ぜひ繋いでほしい」とお願いされたので、ご連絡しました✨
+
+大分で活動されている小野徳三さんという方で、
+
+・結婚相談所「晴日」
+・AI・Web制作
+・美容・健康
+
+を通して、人と人とのご縁をつなぐ活動をされています😊
+
+もし、
+
+🌸 婚活を考えている方
+🌸 独身のお知り合いがいる方
+🌸 AIやホームページ制作に興味がある方
+🌸 美容・健康に興味がある方
+🌸 健康サロンを運営されている方
+🌸 新しいご縁や人脈を広げたい方
+
+など、思い当たる方がいらっしゃいましたら、ぜひプロフィールをご覧いただけると嬉しいです✨
+
+ご縁がつながるきっかけになれば嬉しいです😊</textarea>
+          <button class="button copy-button" type="button" onclick="copyMessage()">紹介メッセージをコピー</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section coupon" id="coupon">
+      <div class="container centered reveal">
+        <p class="eyebrow">LP LIMITED SPECIAL COUPON</p>
+        <h2>このページをご覧いただいた方へ。</h2>
+        <p>エステレラでご利用いただける限定クーポンをご用意しました。</p>
+        <div class="coupon-code" id="couponCode">4N2DN9PG</div>
+        <p class="coupon-expiry">使用期限：2026年12月31日まで</p>
+        <div class="coupon-actions">
+          <button class="button button--dark" type="button" onclick="copyCoupon()">クーポンコードをコピー</button>
+          <button class="button button--gold" type="button" onclick="copyCouponAndOpen()">コピーして公式サイトへ</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section vision">
+      <div class="container centered reveal">
+        <p class="eyebrow">VISION</p>
+        <h2>紹介から生まれる子どもを</h2>
+        <div class="vision-number">10,000人</div>
+        <p>ご紹介をきっかけに新しい家族が生まれ、女性と子どもが笑顔になれる社会へ。</p>
+      </div>
+    </section>
+
+    <section class="final">
+      <div class="reveal">
+        <div class="final-logo">🌳</div>
+        <h2>人とのご縁を力に。</h2>
+        <p>TOKUZO ONO</p>
+        <a class="button button--gold" href="#message">紹介メッセージを使う</a>
+      </div>
+    </section>
+  </main>
+
+
+  <nav class="mobile-bar" aria-label="スマホ用メニュー">
+    <a href="#about">プロフィール</a>
+    <a href="#connect">繋がりたい方</a>
+    <a href="#message">紹介文</a>
+    <a href="#coupon">クーポン</a>
+  </nav>
+
+  <div class="toast" id="toast">コピーしました</div>
+  <script src="script.js"></script>
 </body>
 </html>
